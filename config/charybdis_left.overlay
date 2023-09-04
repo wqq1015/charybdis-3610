@@ -15,3 +15,7 @@
 		, <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 		;
 };
+
+&led_strip {
+	chain-length = <18>;
+};

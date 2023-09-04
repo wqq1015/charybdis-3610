@@ -33,3 +33,7 @@
 	status = "okay"; //okay
 	irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 };
+
+&led_strip {
+	chain-length = <17>;
+};
