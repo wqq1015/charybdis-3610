@@ -18,6 +18,8 @@
 
 &mt {
     tapping-term-ms = <300>;
+    flavor = "tap-preferred";
+    quick-tap-ms = <150>;
 };
 
 / {
@@ -193,8 +195,6 @@
                 &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &cmqus          &dtsmi          &kp CAPS
                                                 &tog MOUSE      &lt FUN TAB     &lt SYM SPACE   &lt SYM RET     &lt FUN BSPC
              	>;
-
-            trackball-bindings = <&tmv>;
         };
 
         number_layer {
@@ -205,8 +205,6 @@
                 &none           &none           &none           &none           &none           &kp KP_EQUAL    &kp N1          &kp N2          &kp N3          &kp KP_DOT
                                                 &none           &none           &kp BSPC        &kp RET         &kp N0
             >;
-
-            trackball-bindings = <&tmv_fine>;
         };
 
         symbol_layer {
@@ -232,11 +230,12 @@
 
         mouse_layer {
             bindings = <
-                &trans           &trans         &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
-                &trans           &trans         &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
-                &tog MOUSE       &trans         &trans          &trans          &trans          &trans          &trans          &trans          &trans          &mkp LCLK
-                                                &mkp LCLK       &mkp MCLK       &mkp RCLK       &trans          &trans
+                &trans           &mwh SCROLL_LEFT &mwh SCROLL_UP   &mwh SCROLL_RIGHT &trans          &trans          &trans          &trans          &trans          &trans
+                &trans           &mkp LCLK        &mkp MCLK        &mkp RCLK         &trans          &trans          &trans          &trans          &trans          &trans
+                &tog MOUSE       &mwh SCROLL_LEFT &mwh SCROLL_DOWN &mwh SCROLL_RIGHT &trans          &trans          &trans          &trans          &trans          &mkp LCLK
+                                                &tog MOUSE      &trans          &trans          &trans          &trans
             >;
+            trackball-bindings = <&tmv>;
         };
     };
 };
