@@ -47,6 +47,13 @@
         tap-ms  = <10>;
         bindings = <&kp LSHIFT &kp LSHIFT>;
       )
+
+      ZMK_MACRO(amos,
+        wait-ms = <0>;
+        tap-ms = <10>;
+        bindings = <&kp LS(A) &kp M &kp O &kp S>
+        , <&kp N6 &kp N9 &kp N8>;
+      )
     };
     
     // custom shift using mod-morph 
@@ -186,7 +193,29 @@
             bindings = <&bt BT_SEL 4>;
         };
 
+        combo_left_reset {
+            timeout-ms = <50>;
+            key-positions = <2 3 4>;
+            bindings = <&sys_reset>;
+        };
+
+        combo_right_reset {
+            timeout-ms = <50>;
+            key-positions = <5 6 7>;
+            bindings = <&sys_reset>;
+        };
+
+        combo_left_bootloader {
+            timeout-ms = <50>;
+            key-positions = <1 2 3 4>;
+            bindings = <&bootloader>;
+        };
         
+        combo_right_bootloader {
+            timeout-ms = <50>;
+            key-positions = <5 6 7 8>;
+            bindings = <&bootloader>;
+        };
     };
 
     keymap {
@@ -237,9 +266,9 @@
 
         mouse_layer {
             bindings = <
-                &trans           &mwh SCROLL_LEFT &mwh SCROLL_UP   &mwh SCROLL_RIGHT &trans          &trans          &trans          &trans          &trans          &trans
+                &trans           &mwh SCROLL_LEFT &mwh SCROLL_DOWN &mwh SCROLL_RIGHT &trans          &trans          &trans          &trans          &trans          &trans
                 &trans           &mkp LCLK        &mkp MCLK        &mkp RCLK         &trans          &trans          &trans          &trans          &trans          &trans
-                &trans           &mwh SCROLL_LEFT &mwh SCROLL_DOWN &mwh SCROLL_RIGHT &trans          &trans          &trans          &trans          &trans          &mkp LCLK
+                &trans           &mwh SCROLL_LEFT &mwh SCROLL_UP   &mwh SCROLL_RIGHT &trans          &trans          &trans          &trans          &trans          &mkp LCLK
                                                   &none            &trans            &trans          &trans          &trans
             >;
         };
