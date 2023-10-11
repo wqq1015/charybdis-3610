@@ -196,13 +196,13 @@
         combo_left_reset {
             timeout-ms = <50>;
             key-positions = <2 3 4>;
-            bindings = <&sys_reset>;
+            bindings = <&reset>;
         };
 
         combo_right_reset {
             timeout-ms = <50>;
             key-positions = <5 6 7>;
-            bindings = <&sys_reset>;
+            bindings = <&reset>;
         };
 
         combo_left_bootloader {
