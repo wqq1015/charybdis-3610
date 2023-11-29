@@ -1,8 +1,4 @@
-/*
- * Copyright (c) 2020 ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
+
  
 #include "charybdis_nano.dtsi"
 
