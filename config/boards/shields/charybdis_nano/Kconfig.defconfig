@@ -45,7 +45,7 @@ endchoice
 
 endif # LVGL
 
-endif
+
 
 config MOUSE_LAYER_INDEX
 	int "Index of mouse layer"
