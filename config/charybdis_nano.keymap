@@ -101,7 +101,7 @@
                    &kp LALT   &kp LALT  &kp LCTRL  &kp DEL    &none   &none    &none      &none
             >;
 
-
+        sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
             trackball-bindings = <&tmv>;
         };
 
