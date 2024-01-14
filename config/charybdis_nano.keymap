@@ -13,7 +13,7 @@
 #define SYMBOL  2
 #define HOTKEY  3
 
-#define AS(keycode) &as LS(keycode) keycode
+
 
 / {
     behaviors {
@@ -28,29 +28,7 @@
         };
     };
 
-    behaviors {
-        as: auto_shift {
-            compatible = "zmk,behavior-hold-tap";
-            label = "AUTO_SHIFT";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings =
-                <&kp>,
-                <&kp>;
-        };
-        modcp: mod_copy {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MOD_COPY";
-            #binding-cells = <0>;
-            bindings =
-                <&as LS(C) C>,
-                <&kp C>;
 
-            mods = <(LGUI | RGUI)>;
-        };
-    };
 
     macros {
         macro_phone: macro_phone {
@@ -123,7 +101,7 @@
                    &kp LALT   &kp LALT  &kp LCTRL  &kp DEL    &none   &none    &none      &none
             >;
 
-         //   sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
+
             trackball-bindings = <&tmv>;
         };
 
@@ -139,7 +117,7 @@
             >;
 
             trackball-bindings = <&tsl>;
-        //    sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
+
         };
 
         symbol_layer {
@@ -153,8 +131,8 @@
                             &none         &none         &none         &none         &none         &none         &none         &none
             >;
 
-            trackball-bindings = <&tmv_fine>;
-          //  sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
+             trackball-bindings = <&tmv_coarse>;
+  
         };
 
         hotkey_layer {
@@ -168,8 +146,7 @@
                             &none         &none         &none         &none       &none         &none         &none         &none
             >;
 
-            trackball-bindings = <&tmv_x>;
-       //     sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
+     trackball-bindings = <&tsl>;
         };
     };
 };
